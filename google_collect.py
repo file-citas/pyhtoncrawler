@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf8 -*-
 
 from xgoogle.search import GoogleSearch, SearchError
 
@@ -13,7 +14,7 @@ class GoogleCollect:
 		while True:
 			results = gs.get_results()
 			for res in results:
-				self.urls.append(res.url.encode('utf8'))
+				self.urls.append(res.url)
 			if len(results)<10:
 				break
 
