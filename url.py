@@ -17,7 +17,7 @@ class Url(object):
 	"""
 	def __init__(self, url):
 		"""Construct from a string or Django request."""
-		nurl = urlnorm.norm(url)
+		nurl = urlnorm.norm(url.encode('utf-16').lower())
 		if hasattr(nurl, 'get_full_path'):
 			nurl = nurl.get_full_path()
 
